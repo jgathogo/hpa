@@ -1,0 +1,48 @@
+{% extends "cfp/base.html" %}
+{% load humanize %}
+{% block title %}List of all Call for Proposals{% endblock %}
+{% block content %}
+    {% if all_cfps_list %}
+    <ul>
+
+    <table class="table table-bordered">
+    <thead>
+  <tr>
+    <th>Donor</th>
+    <th>Call for Proposals<br></th>
+    <th>Theme</th>
+    <th>Zone</th>
+    <th>Funding</th>
+    <th>Deadline for Submission<br></th>
+  </tr>
+  </thead>
+  {% for cfp in all_cfps_list %}
+  <tr>
+    <td>{{ cfp.donor }}</td>
+    <td><a href="{% url 'cfp:cfp_detail' cfp.id %}">{{ cfp.cfp_title }}</a></td>
+    <td>
+        {% for theme in cfp.themes.all %}
+        {{ theme }},
+        {% endfor %}
+
+    </td>
+
+    <td>
+    	{% for zone in cfp.zones.all %}
+    	{{ zone }},
+    	{% endfor %}
+
+    
+    <td>{{ cfp.funding_currency }} {{ cfp.maximum_budget|intcomma }}</td>
+    <td>{{ cfp.closing_date }}</td>
+  </tr>
+   {% endfor %}
+</table>
+    
+        
+   
+    </ul>
+{% else %}
+    <p>No Call for Proposals are available.</p>
+{% endif %}
+{% endblock %}

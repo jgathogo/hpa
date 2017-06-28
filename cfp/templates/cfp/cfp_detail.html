@@ -1,0 +1,81 @@
+{% extends "cfp/base.html" %}
+{% load humanize %}
+{% block title %}Call for Proposal Detail{% endblock %}
+{% block content %}
+
+<h2>{{ cfp.cfp_title }}</h2> 
+<h4 style="color: red">Closing date for applications: {{ cfp.closing_date }}</h4>
+
+
+<table class="table table-bordered">
+<tbody>
+    <tr>
+        <th scope="row">Donor</th>
+        <td>{{ cfp.donor }}</td>
+    </tr>
+
+    <tr>
+        <th scope="row">Call for proposals website</th>
+        <td><a href="{{ cfp.cfp_link }}">{{ cfp.cfp_link }}</a></td>
+    </tr>
+
+    <tr>
+        <th scope="row">Publication date</th>
+        <td>{{ cfp.pub_date }}</td>
+    </tr>
+
+    <tr>
+        <th scope="row">Theme(s)</th>
+        <td>
+
+        {% for theme in cfp.themes.all %}       
+
+        {{ theme }}, 
+         {% endfor %}
+         </td>
+    </tr>
+
+    <tr>
+        <th scope="row">Eligible location(zone)</th>
+        <td>
+        {% for zone in cfp.zones.all %}
+        {{ zone }}, 
+        {% endfor %}
+        </td>
+    </tr>
+
+     <tr>
+        <th scope="row">Type of projects</th>
+        <td>{{ cfp.type_of_projects }}</td>
+    </tr>
+
+     <tr>
+        <th scope="row">Total budget available</th>
+        <td>{{ cfp.funding_currency }} {{ cfp.overall_budget|intcomma }}</td>
+    </tr>
+
+    <tr>
+        <th scope="row">Minimum budget allowed for a project</th>
+        <td>{{ cfp.funding_currency }} {{ cfp.minimum_budget|intcomma }}</td>
+    </tr>
+
+    <tr>
+        <th scope="row">Maximum budget allowed for a project</th>
+        <td>{{ cfp.funding_currency }} {{ cfp.maximum_budget|intcomma }}</td>
+    </tr>
+
+    <tr>
+        <th scope="row">Maximum project duration(in months)</th>
+        <td>{{ cfp.duration }}</td>
+    </tr>
+
+     <tr>
+        <th scope="row">Notes</th>
+        <td>{{ cfp.notes }}</td>
+    </tr>
+
+</tbody>
+    
+</table>
+
+{% endblock %}
