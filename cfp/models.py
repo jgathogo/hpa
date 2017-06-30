@@ -36,7 +36,7 @@ class Cfp(models.Model):
     CURRENCY = (
         ('USD', 'US Dollars'),
         ('GBP', 'British Pound'),
-        ('EUR', 'Euro'),
+        ('EUR', 'Euros'),
         ('KES', 'Kenya Shillings'),
         ('JPY', 'Japanese Yen'),
         ('CAD', 'Canadian Dollars'),

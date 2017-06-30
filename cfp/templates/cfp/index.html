@@ -18,7 +18,7 @@
   </thead>
   {% for cfp in all_cfps_list %}
   <tr>
-    <td>{{ cfp.donor }}</td>
+    <td>{{ cfp.donor.donor }}</td>
     <td><a href="{% url 'cfp:cfp_detail' cfp.id %}">{{ cfp.cfp_title }}</a></td>
     <td>
         {% for theme in cfp.themes.all %}
