@@ -1,0 +1,15 @@
+{% extends "cfp/base.html" %}
+{% load humanize %}
+{% block title %}Edit Call for Proposal{% endblock %}
+{% block content %}
+
+<form action="" method="post" novalidate>
+
+    {% csrf_token %}
+    {{ form.as_p }}
+
+</form>
+
+
+
+{% endblock %}

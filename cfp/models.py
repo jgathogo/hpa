@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Donor(models.Model):
@@ -73,6 +74,9 @@ class Cfp(models.Model):
     # how_to_apply = models.TextField()
     apply_here = models.URLField(blank=True)
     notes = models.TextField(blank=True)
+
+    def get_absolute_url(self):
+        return reverse('CfPDetailView', args=[str(self.id)])
 
     def __str__(self):
         return self.cfp_title

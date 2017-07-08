@@ -23,20 +23,27 @@ class CfPDetailView(generic.DetailView):
     template_name = 'cfp/cfp_detail.html'
 
 
+# def edit_cfp(request, pk):
+#     cfp_inst = get_object_or_404(Cfp, pk=pk)
+
+#     # If this is a POST request then process the Form data
+#     if request.method == 'POST':
+#         # Create a form instance and populate it with data from the request
+#         # (binding):
+#         form = EditCfPForm(request.POST)
+
+#         # Check if the form is valid
+#         if form.is_valid():
+#             cfp_inst = form.cleaned_data['cfp_title']
+#             cfp_inst.save()
+
+#             # redirect to a new URL:
+#             return HttpResponseRedirect('/thank-you/')
+
+#     else:
+#         form = EditCfPForm(initial={'cfp_title': Cfp.cfp_title})
+#     return render(request, 'cfp/edit_cfp.html', {'form': form})
 def edit_cfp(request, pk):
-    cfp_inst = get_object_or_404(Cfp, pk=pk)
-
-    # If this is a POST request then process the Form data
-    if request.method == 'POST':
-        # Create a form instance and populate it with data from the request
-        # (binding):
-        form = EditCfPForm(request.POST)
-
-        # Check if the form is valid
-        if form.is_valid():
-            cfp_inst.due_back = form.cleaned_data['cfp_title']
-            cfp_inst.save()
-
-            #redirect to a new URL:
-            # Read MDN tutorial then come back, 30 June 2017
-            
+    item = get_object_or_404(Cfp, pk=pk)
+    form = EditCfPForm(instance=item)
+    return render(request, 'cfp/edit_cfp.html', {'form': form})
