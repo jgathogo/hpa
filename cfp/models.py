@@ -82,3 +82,5 @@ class Cfp(models.Model):
         return self.cfp_title
 
     cfp = models.Manager()
+
+

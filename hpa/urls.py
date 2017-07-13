@@ -20,4 +20,5 @@ urlpatterns = [
     url(r'^cfp/', include('cfp.urls')),
     url(r'^inventory/', include('inventory.urls')),
     url(r'^admin/', admin.site.urls),
+    url(r'^dynamic_forms/', include('dynamic_forms.urls', namespace='dynamic_forms')),
 ]

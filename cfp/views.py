@@ -1,6 +1,6 @@
 from django.http import Http404, HttpResponse, HttpResponseRedirect
 from django.views import generic
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 
 from .models import Cfp, Donor, Theme, Zone
 from .forms import EditCfPForm
@@ -44,6 +44,15 @@ class CfPDetailView(generic.DetailView):
 #         form = EditCfPForm(initial={'cfp_title': Cfp.cfp_title})
 #     return render(request, 'cfp/edit_cfp.html', {'form': form})
 def edit_cfp(request, pk):
-    item = get_object_or_404(Cfp, pk=pk)
-    form = EditCfPForm(instance=item)
+    cfp = get_object_or_404(Cfp, pk=pk)
+    # form = EditCfPForm(instance=cfp)
+
+    if request.method == "POST":
+        form = EditCfPForm(request.POST, instance=cfp)
+        if form.is_valid():
+            cfp = form.save(commit=False)
+            cfp.save()
+            return redirect('/')
+    else:
+        form = EditCfPForm(instance=cfp)
     return render(request, 'cfp/edit_cfp.html', {'form': form})
