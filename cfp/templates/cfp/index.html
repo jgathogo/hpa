@@ -17,6 +17,7 @@
   </tr>
   </thead>
   {% for cfp in all_cfps_list %}
+  {% if not cfp.past_deadline or cfp.no_closing_date %}
   <tr>
     <td>{{ cfp.donor.donor }}</td>
     <td><a href="{% url 'cfp:cfp_detail' cfp.id %}">{{ cfp.cfp_title }}</a></td>
@@ -32,15 +33,16 @@
     	{{ zone }},
     	{% endfor %}
 
-    
+
     <td>{{ cfp.funding_currency }} {{ cfp.maximum_budget|intcomma }}</td>
     <td>{{ cfp.closing_date }}</td>
   </tr>
+  {% endif %}
    {% endfor %}
 </table>
-    
-        
-   
+
+
+
     </ul>
 {% else %}
     <p>No Call for Proposals are available.</p>

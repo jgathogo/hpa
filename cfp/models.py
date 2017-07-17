@@ -1,4 +1,8 @@
+import datetime
+
+
 from django.db import models
+from django.utils import timezone
 
 
 class Donor(models.Model):
@@ -76,5 +80,14 @@ class Cfp(models.Model):
 
     def __str__(self):
         return self.cfp_title
+
+    def past_deadline(self):
+        leo = datetime.date.today()
+        deadline = self.closing_date
+        return leo > deadline
+
+    def no_closing_date(self):
+        return self.closing_date is None
+
 
     cfp = models.Manager()
