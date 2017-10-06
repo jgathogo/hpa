@@ -4,6 +4,16 @@
    * ~~Add a README file – explain what this project is all about~~
    * ~~Add this USERSTORIES.md~~
    * Update README - See [Github help pages](https://help.github.com/articles/about-readmes/) on how to write a helpful one.
+   * Development [standards](https://lukeplant.me.uk/development-standards.html) by Luke Plant. Check these in order to 'close' this document:
+        - Complete source code available
+        - Dependencies documented
+        - Dependencies kept up-to-date
+        - Version Control System used for all sources
+        - Automated tests for non-trivial functionality
+        - Deployment scripts
+        - Relevant standards and laws followed
+        - Documentation included
+
  * Create landing home page with a list of HPA Apps
     * Use Bootstrap to create website shell – include menus, header and footers
     * Bootstrap – CDN or host locally? Consider pros and cons
