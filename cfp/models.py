@@ -2,7 +2,11 @@ import datetime
 
 
 from django.db import models
+<<<<<<< HEAD
 from django.utils import timezone
+=======
+from django.urls import reverse
+>>>>>>> data-entry-forms
 
 
 class Donor(models.Model):
@@ -78,6 +82,9 @@ class Cfp(models.Model):
     apply_here = models.URLField(blank=True)
     notes = models.TextField(blank=True)
 
+    def get_absolute_url(self):
+        return reverse('CfPDetailView', args=[str(self.id)])
+
     def __str__(self):
         return self.cfp_title
 
@@ -91,3 +98,5 @@ class Cfp(models.Model):
 
 
     cfp = models.Manager()
+
+
