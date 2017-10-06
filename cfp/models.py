@@ -1,12 +1,8 @@
 import datetime
 
-
 from django.db import models
-<<<<<<< HEAD
 from django.utils import timezone
-=======
 from django.urls import reverse
->>>>>>> data-entry-forms
 
 
 class Donor(models.Model):
@@ -98,5 +94,3 @@ class Cfp(models.Model):
 
 
     cfp = models.Manager()
-
-
