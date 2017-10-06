@@ -3,6 +3,7 @@
  * Project documentation
    * ~~Add a README file – explain what this project is all about~~
    * ~~Add this USERSTORIES.md~~
+   * Update README - See [Github help pages](https://help.github.com/articles/about-readmes/) on how to write a helpful one.
  * Create landing home page with a list of HPA Apps
     * Use Bootstrap to create website shell – include menus, header and footers
     * Bootstrap – CDN or host locally? Consider pros and cons
@@ -36,6 +37,3 @@
 * As a Super User, I want to receive notification of any change to the donor, CfP, theme and zone
 * When CfP is updated – any update – let SuperUser know
 * If a new CfP is added notify, Head of Programmes and specific Programme Manager. New add should first check if the Programme Manager for a particular country is in the database and prompt user to fill in their details.
-
-***
-* Update README - See [Github help pages](https://help.github.com/articles/about-readmes/) on how to write a helpful one.
