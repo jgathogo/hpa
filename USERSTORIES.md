@@ -1,4 +1,4 @@
-# User stories and activities
+ra# User stories and activities
 * As anyone I can visit apps.healthpovertyaction.or.ke and chose to see Call for Proposals
  * Project documentation
    * ~~Add a README file – explain what this project is all about~~
@@ -16,7 +16,7 @@
 
  * Create landing home page with a list of HPA Apps
     * Use Bootstrap to create website shell – include menus, header and footers
-    * Bootstrap – CDN or host locally? Consider pros and cons
+    * ~~Bootstrap – CDN or host locally? Consider pros and cons~~
     * Create static folder for CSS, JS etc
 *****
 * As anyone, I can view calls for proposals by country, closing date for applications, theme, donor

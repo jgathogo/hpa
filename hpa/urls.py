@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.views.generic import RedirectView
 
 urlpatterns = [
     url(r'^cfp/', include('cfp.urls')),
+    # For now, redirect the base URL to our application
+    url(r'^$', RedirectView.as_view(url='/cfp/', permanent=True)),
     url(r'^inventory/', include('inventory.urls')),
     url(r'^admin/', admin.site.urls),
 ]
