@@ -15,9 +15,10 @@ ra# User stories and activities
         - Documentation included
 
  * Create landing home page with a list of HPA Apps
-    * Use Bootstrap to create website shell – include menus, header and footers
+    * ~~Use Bootstrap to create website shell – include menus, header and footers~~
     * ~~Bootstrap – CDN or host locally? Consider pros and cons~~
-    * Create static folder for CSS, JS etc
+    * ~~Create static folder for CSS, JS etc~~
+    * Make sidebar items toggleable
 *****
 * As anyone, I can view calls for proposals by country, closing date for applications, theme, donor
 * As a Programme Manager of Country X, I can view the calls for proposals specific to my country

@@ -3,9 +3,9 @@
 {% block title %}List of all Call for Proposals{% endblock %}
 {% block content %}
     {% if all_cfps_list %}
-    <ul>
 
-    <table class="table table-bordered">
+<div class="table-responsive">
+    <table class="table table-striped">
     <thead>
   <tr>
     <th>Donor</th>
@@ -40,10 +40,11 @@
   {% endif %}
    {% endfor %}
 </table>
+</div>
 
 
 
-    </ul>
+    
 {% else %}
     <p>No Call for Proposals are available.</p>
 {% endif %}
