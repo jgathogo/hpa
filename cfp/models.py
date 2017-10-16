@@ -3,6 +3,7 @@ import datetime
 from django.db import models
 from django.utils import timezone
 from django.urls import reverse
+from autoslug import AutoSlugField
 
 
 class Donor(models.Model):
@@ -49,6 +50,7 @@ class Cfp(models.Model):
     donor = models.ForeignKey(Donor, on_delete=models.CASCADE)
     title = models.CharField(
         max_length=200, unique=True, verbose_name='Call for proposals title')
+    slug = AutoSlugField(max_length=255, null=True, editable=True, unique=True, populate_from='title')
     link = models.URLField(verbose_name='Call for proposals website')
     pub_date = models.DateField(verbose_name='Published')
     closing_date_provided = models.BooleanField(
@@ -82,12 +84,13 @@ class Cfp(models.Model):
         return reverse('cfp:cfp_detail', args=[str(self.id)])
 
     def __str__(self):
-        return self.cfp_title
+        return self.title
 
     def past_deadline(self):
-        leo = datetime.date.today()
-        deadline = self.closing_date
-        return leo > deadline
+        # leo = datetime.date.today()
+        # deadline = self.closing_date
+        # return leo > deadline
+        pass
 
     def no_closing_date(self):
         return self.closing_date is None
