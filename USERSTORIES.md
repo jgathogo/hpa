@@ -28,7 +28,7 @@ ra# User stories and activities
 * As Staff, I can view calls for proposals
 * As Staff, I can view calls for proposals by Theme
 * As Staff, I can view calls for proposals by closing date for applications
-    * Better URL presentation to include a slug perhaps e.g., cfp/donor-cfp-title
+    * ~~Better URL presentation to include a slug perhaps e.g., cfp/donor-cfp-title~~
     * Make the website RESTful
     * Present call for proposals by deadline date, in the following categories, if they exist – 1) current month, 2) each of the next 5 months 3) ongoing (with no deadline)
     * User can chose/search by country, theme, donor – dynamic menus for this? Or do we let user choose from drop-down list?
