@@ -81,16 +81,15 @@ class Cfp(models.Model):
     notes = models.TextField(blank=True)
 
     def get_absolute_url(self):
-        return reverse('cfp:cfp_detail', args=[str(self.id)])
+        return reverse('cfp:cfp_detail', args=[str(self.slug)])
 
     def __str__(self):
         return self.title
 
     def past_deadline(self):
-        # leo = datetime.date.today()
-        # deadline = self.closing_date
-        # return leo > deadline
-        pass
+        leo = datetime.date.today()
+        deadline = self.closing_date
+        return leo > deadline
 
     def no_closing_date(self):
         return self.closing_date is None

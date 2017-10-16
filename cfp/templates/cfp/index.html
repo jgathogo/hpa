@@ -20,7 +20,7 @@
   {% if not cfp.past_deadline or cfp.no_closing_date %}
   <tr>
     <td>{{ cfp.donor.name }}</td>
-    <td><a href="{% url 'cfp:cfp_detail' cfp.id %}">{{ cfp.title }}</a></td>
+    <td><a href="{% url 'cfp:cfp_detail' cfp.slug %}">{{ cfp.title }}</a></td>
     <td>
         {% for theme in cfp.themes.all %}
         {{ theme }},
