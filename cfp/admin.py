@@ -5,7 +5,7 @@ from .models import Cfp, Donor, Theme, Zone
 
 @admin.register(Cfp)
 class CfpAdmin(admin.ModelAdmin):
-    list_display = ('donor', 'cfp_title', 'pub_date')
+    list_display = ('donor', 'title', 'pub_date')
 
 
 # admin.site.register(Cfp, CfpAdmin)

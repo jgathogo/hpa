@@ -6,14 +6,14 @@ from django.urls import reverse
 
 
 class Donor(models.Model):
-    donor = models.CharField(max_length=200, unique=True)
-    donor_abbrev = models.CharField(max_length=20, unique=True)
+    name = models.CharField(max_length=200, unique=True)
+    abbrev = models.CharField(max_length=20, unique=True)
 
     def __str__(self):
-        return self.donor_abbrev
+        return self.abbrev
 
     class Meta:
-        ordering = ('donor',)
+        ordering = ('name',)
 
 
 class Theme(models.Model):
@@ -47,9 +47,9 @@ class Cfp(models.Model):
     )
     entered_at = models.DateTimeField(auto_now_add=True, editable=False)
     donor = models.ForeignKey(Donor, on_delete=models.CASCADE)
-    cfp_title = models.CharField(
+    title = models.CharField(
         max_length=200, unique=True, verbose_name='Call for proposals title')
-    cfp_link = models.URLField(verbose_name='Call for proposals website')
+    link = models.URLField(verbose_name='Call for proposals website')
     pub_date = models.DateField(verbose_name='Published')
     closing_date_provided = models.BooleanField(
         verbose_name='Closing date specified?')
@@ -79,7 +79,7 @@ class Cfp(models.Model):
     notes = models.TextField(blank=True)
 
     def get_absolute_url(self):
-        return reverse('CfPDetailView', args=[str(self.id)])
+        return reverse('cfp:cfp_detail', args=[str(self.id)])
 
     def __str__(self):
         return self.cfp_title
@@ -91,6 +91,5 @@ class Cfp(models.Model):
 
     def no_closing_date(self):
         return self.closing_date is None
-
 
     cfp = models.Manager()

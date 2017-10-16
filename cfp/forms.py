@@ -15,7 +15,7 @@ from .models import Cfp
 class EditCfPForm(forms.ModelForm):
     class Meta:
         model = Cfp
-        fields = ['donor', 'cfp_title']
+        fields = ['donor', 'title']
 
 
 

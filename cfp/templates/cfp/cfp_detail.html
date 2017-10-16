@@ -3,7 +3,7 @@
 {% block title %}Call for Proposal Detail{% endblock %}
 {% block content %}
 
-<h2>{{ cfp.cfp_title }}</h2> 
+<h2>{{ cfp.cfp_title }}</h2>
 <h4 style="color: red">Closing date for applications: {{ cfp.closing_date }}</h4>
 
 
@@ -11,12 +11,12 @@
 <tbody>
     <tr>
         <th scope="row">Donor</th>
-        <td>{{ cfp.donor.donor }}</td>
+        <td>{{ cfp.donor.name }}</td>
     </tr>
 
     <tr>
         <th scope="row">Call for proposals website</th>
-        <td><a href="{{ cfp.cfp_link }}">{{ cfp.cfp_link }}</a></td>
+        <td><a href="{{ cfp.link }}">{{ cfp.link }}</a></td>
     </tr>
 
     <tr>
@@ -28,9 +28,9 @@
         <th scope="row">Theme(s)</th>
         <td>
 
-        {% for theme in cfp.themes.all %}       
+        {% for theme in cfp.themes.all %}
 
-        {{ theme }}, 
+        {{ theme }},
          {% endfor %}
          </td>
     </tr>
@@ -39,7 +39,7 @@
         <th scope="row">Eligible location(zone)</th>
         <td>
         {% for zone in cfp.zones.all %}
-        {{ zone }}, 
+        {{ zone }},
         {% endfor %}
         </td>
     </tr>
@@ -75,7 +75,7 @@
     </tr>
 
 </tbody>
-    
+
 </table>
 
 {% endblock %}
