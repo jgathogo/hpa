@@ -1,4 +1,4 @@
-ra# User stories and activities
+# User stories and activities
 * As anyone I can visit apps.healthpovertyaction.or.ke and chose to see Call for Proposals
  * Project documentation
    * ~~Add a README file – explain what this project is all about~~
